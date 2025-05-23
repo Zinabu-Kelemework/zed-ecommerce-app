@@ -8,6 +8,9 @@ app.use(express.json());
 app.use('/api/products', products);
 app.use('/api/orders', orders);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+// Default to 5000 if PORT is not in .env
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
